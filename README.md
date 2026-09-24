@@ -88,7 +88,7 @@ src/
 
 ### Alternative "Read more" implementation: `details` + `summary`
 
-The "Read more" block could be built on the native `<details>` / `<summary>` elements and animated with pure CSS via the `::details-content` pseudo-element and `interpolate-size`. **This option is not used in the project** — the code uses a different, more stable approach with wider browser support.
+The "Read more" block could be built on the native `<details>` / `<summary>` elements and animated with pure CSS via the `::details-content` pseudo-element and `interpolate-size`. **This option is not used in the project** — the code uses a different, more stable approach with wider browser support: a visually hidden `checkbox` + `label` and a `grid-template-rows: 0fr → 1fr` transition (no fixed height, works for text of any length).
 
 #### Why it was rejected
 

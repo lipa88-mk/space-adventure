@@ -1,15 +1,27 @@
-// Значения будут уточнены по макету в Figma
+$color-brand: #ff70d9;
+$color-accent: #ebff00;
+$color-navy: #304571;
+$color-bg: #000000;
+$color-fg: #ffffff;
 
-// Цвета
-$color-bg: #000;
-$color-text: #fff;
+$font-main: 'Lato', Arial, sans-serif;
+$font-weight-base: 700;
+$font-weight-heavy: 900;
 
-// Шрифты
-$font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$bp-desktop: 1248px;
+$container-desktop: 1248px;
+$padding-desktop: 80px;
 
-// Брейкпоинты
-$bp-tablet: 1024px;
+$bp-tablet: 1023px;
+$padding-tablet: 20px;
+
 $bp-mobile: 767px;
+$padding-mobile: 20px;
 
-// Анимации
 $transition: 0.3s ease;
+
+$overlay: linear-gradient(
+  to bottom,
+  rgba(15, 20, 32, 0),
+  rgba(15, 20, 32, 0.79)
+);

@@ -12,7 +12,7 @@
   }
 }
 
-@mixin bg-overlay-retina($name, $path: './assets/images/') {
+@mixin bg-overlay-retina($name, $path: '../assets/images/') {
   background-image: $overlay, url('#{$path}#{$name}.webp');
   background-image:
     $overlay,

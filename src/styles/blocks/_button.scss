@@ -1,0 +1,57 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.button {
+  $vertical-padding: 14px;
+  $horizontal-padding: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $vertical-padding $horizontal-padding;
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  color: $color-accent;
+  background: transparent;
+  border: 2px solid $color-accent;
+  border-radius: 27px;
+  transition:
+    color $transition,
+    border-color $transition;
+
+  &:hover {
+    color: $color-accent-muted;
+    border-color: $color-accent-muted;
+  }
+
+  &--accent {
+    color: $color-bg;
+    background-color: $color-accent;
+    border-color: transparent;
+
+    transition:
+      color $transition,
+      background-color $transition;
+
+    &:hover {
+      color: $color-bg;
+      background-color: $color-accent-muted;
+      border-color: transparent;
+    }
+  }
+
+  @include tablet {
+    font-size: 16px;
+    padding: $vertical-padding/2 $horizontal-padding;
+
+    &--accent {
+      padding: $vertical-padding $horizontal-padding;
+    }
+  }
+
+  @include mobile {
+    &--accent {
+      padding: $vertical-padding/2 $horizontal-padding;
+    }
+  }
+}

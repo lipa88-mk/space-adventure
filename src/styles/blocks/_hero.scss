@@ -1,0 +1,44 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.hero {
+  $hero-height: 490px;
+
+  min-height: $hero-height;
+  background-color: $color-navy;
+
+  @include bg-overlay-retina('bg-main');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+}
+
+.hero__wrap {
+  padding-top: 90px;
+  padding-bottom: 80px;
+  background-image: url('../../assets/images/earth.webp');
+
+  // for retina:
+  background-image: image-set(
+    url('../../assets/images/earth.webp') 1x,
+    url('../../assets/images/earth@2x.webp') 2x
+  );
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.hero__title {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+.hero__description {
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}

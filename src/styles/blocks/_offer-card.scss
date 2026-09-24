@@ -1,0 +1,72 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 50px 36px 36px 36px;
+  border-radius: 8px;
+
+  background-color: $color-navy;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include mobile {
+    padding: 32px 20px;
+  }
+}
+
+.offer-card--wide {
+  padding: 36px;
+}
+
+@each $i in 1, 2, 3, 4 {
+  .offer-card--#{$i} {
+    @include bg-overlay-retina('bg-card-#{$i}');
+  }
+}
+
+.offer-card__title {
+  font-size: 46px;
+  line-height: 1;
+  margin-bottom: 22px;
+  width: 60%;
+
+  @include mobile {
+    font-size: 40px;
+  }
+}
+
+.offer-card--wide .offer-card__title {
+  font-size: 74px;
+
+  @include tablet {
+    font-size: 40px;
+  }
+}
+
+.offer-card__text {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.offer-card--wide .offer-card__text {
+  font-size: 26px;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.offer-card__button:focus-visible {
+  outline: 2px solid $color-fg;
+  outline-offset: 4px;
+}

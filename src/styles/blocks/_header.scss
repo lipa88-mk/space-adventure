@@ -1,0 +1,13 @@
+@use '../variables' as *;
+
+.header {
+  background: $color-bg;
+  padding: 24px 0 20px 0;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}

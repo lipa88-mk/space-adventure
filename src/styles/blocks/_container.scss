@@ -1,0 +1,19 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.container {
+  width: 100%;
+  max-width: $container-desktop;
+  margin: 0 auto;
+  padding-left: $padding-desktop;
+  padding-right: $padding-desktop;
+
+  @include tablet {
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+  @include mobile {
+    padding-left: $padding-mobile;
+    padding-right: $padding-mobile;
+  }
+}

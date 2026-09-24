@@ -8,29 +8,22 @@ const offers = [
     title: 'Move the borders of reality!',
     text: "Go on a space adventure - it's possible with us!",
     isWide: true,
-    details:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora neque eaque natus eligendi nemo maxime animi unde atque, illum dicta molestias veniam voluptas architecto a voluptatem officiis numquam nobis omnis.',
   },
   {
     id: 2,
     title: 'Space is not just stars and planets',
     text: 'Go on a space adventure',
-    details:
-      'Lorem ipsum dolor sit amet conseco maxime animi unde atque, illum dicta molestias veniam voluptas architecto a voluptatem officiis numquam nobis omnis.',
   },
   {
     id: 3,
     title: 'For those who dream of stars',
     text: 'Our offer: make your dream come true',
-    details:
-      'Tempora neque eaque natus eligendi nemo maxime animi unde atque, illum dicta molestias veniam voluptas architecto a voluptatem officiis numquam nobis omnis.',
   },
   {
     id: 4,
     title: 'Fulfill your fantastic dreams',
     text: 'Space has never been so close',
     isWide: true,
-    details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   },
 ];
 
@@ -96,7 +89,7 @@ function App() {
               Where the possibilities are{' '}
               <span className="accent">endless!</span>
             </p>
-            <button type="button" className="button">
+            <button type="button" className="button button--accent">
               Learn more
             </button>
           </div>
@@ -106,7 +99,7 @@ function App() {
           <h2 className="offers__title">Offers</h2>
 
           <ul className="offers__list">
-            {offers.map(({ id, title, text, isWide, details }) => (
+            {offers.map(({ id, title, text, isWide }) => (
               <li
                 className={`offers__item${isWide ? ' offers__item--wide' : ''}`}
                 key={id}
@@ -118,31 +111,9 @@ function App() {
                 >
                   <h3 className="offer-card__title">{title}</h3>
                   <p className="offer-card__text">{text}</p>
-
-                  <input
-                    className="offer-card__toggle visually-hidden"
-                    type="checkbox"
-                    id={`offer-toggle-${id}`}
-                    aria-controls={`offer-details-${id}`}
-                  />
-                  <label
-                    className="offer-card__button button"
-                    htmlFor={`offer-toggle-${id}`}
-                  >
-                    <span className="offer-card__button-text offer-card__button-text--more">
-                      Learn more
-                    </span>
-                    <span className="offer-card__button-text offer-card__button-text--less">
-                      Hide
-                    </span>
-                  </label>
-
-                  <div
-                    className="offer-card__details"
-                    id={`offer-details-${id}`}
-                  >
-                    <p className="offer-card__details-text">{details}</p>
-                  </div>
+                  <button className="offer-card__button button" type="button">
+                    Learn more
+                  </button>
                 </article>
               </li>
             ))}

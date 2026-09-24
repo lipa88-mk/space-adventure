@@ -1,0 +1,9 @@
+@use 'styles/reset';
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+body {
+  font-family: $font-main;
+  color: $color-text;
+  background-color: $color-bg;
+}

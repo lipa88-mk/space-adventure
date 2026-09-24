@@ -1,85 +1,85 @@
 # Space Adventure
 
-Адаптивная вёрстка одностраничного SPA вымышленного приложения по макету из Figma.
+Responsive layout of a single-page SPA for a fictional app, built from a Figma design.
 
-- Репозиторий: https://github.com/lipa88-mk/space-adventure
+- Repository: https://github.com/lipa88-mk/space-adventure
 
-## Суть задачи
+## Task
 
-Сверстать страницу по макету в Figma (в макете есть все нужные элементы: изображения, фоны, логотипы, формы кнопок, цвета и шрифты) и реализовать:
+Build the page from the Figma design (the design contains all the required elements: images, backgrounds, logos, button shapes, colors and fonts) and implement:
 
-- адаптивную вёрстку под три вьюпорта из макета;
-- интерактивные состояния элементов при наведении (hover);
-- логику бургер-меню для мобильных устройств на JavaScript;
-- кнопки «Read more» (развернуть / свернуть) **без JavaScript** — только средствами CSS.
+- a responsive layout for the three viewports in the design;
+- interactive hover states for elements;
+- burger menu logic for mobile devices in JavaScript;
+- "Read more" buttons (expand / collapse) **without JavaScript** — using CSS only.
 
-## Требования
+## Requirements
 
-1. Вёрстка должна точно соответствовать макету и быть полностью адаптивной. Дизайн включает три вьюпорта, ориентироваться нужно на них.
-2. Pixel perfect не требуется.
-3. Запрещено использование любых фреймворков и библиотек для создания адаптивного дизайна, а также CSS-модулей.
-4. Для сеток используются flex / grid.
-5. Для фона рекомендуется использовать Multiple Backgrounds.
-6. Изображения оптимизированы, где возможно — используется SVG.
+1. The layout must closely match the design and be fully responsive. The design includes three viewports, which should be used as the reference.
+2. Pixel perfect is not required.
+3. Using any frameworks or libraries for responsive design, as well as CSS modules, is not allowed.
+4. Flex / grid are used for layouts.
+5. Multiple Backgrounds are recommended for the background.
+6. Images are optimized; SVG is used where possible.
 
-### Рекомендации
+### Recommendations
 
-- Проект создан на основе шаблона Create React App с SASS.
-- Вёрстка реализуется в компоненте `App.js`, стили — в `App.scss` (с использованием препроцессора).
-- Именование классов — по методологии БЭМ.
-- Допускается добавление данных и использование React Hooks.
-- Проект разворачивается на GitHub Pages.
+- The project is based on the Create React App template with SASS.
+- The markup is implemented in the `App.js` component, styles in `App.scss` (using the preprocessor).
+- Class names follow the BEM methodology.
+- Adding data and using React Hooks is allowed.
+- The project is deployed to GitHub Pages.
 
-## Стек
+## Stack
 
 - React 19 (Create React App, `react-scripts` 5)
 - SCSS (Dart Sass)
-- БЭМ
+- BEM
 
-## Версии окружения
+## Environment versions
 
-| Инструмент | Версия   |
+| Tool       | Version  |
 |------------|----------|
 | Node.js    | 24.19.0  |
 | npm        | 11.17.0  |
 
-Версии также указаны в `package.json` (поле `engines`) и в `.nvmrc`. При использовании nvm:
+The versions are also specified in `package.json` (the `engines` field) and in `.nvmrc`. If you use nvm:
 
 ```bash
 nvm use
 ```
 
-## Команды
+## Commands
 
-Установка зависимостей:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Запуск в режиме разработки на [http://localhost:3000](http://localhost:3000) (страница перезагружается при изменениях):
+Run in development mode at [http://localhost:3000](http://localhost:3000) (the page reloads on changes):
 
 ```bash
 npm start
 ```
 
-Production-сборка в папку `build`:
+Production build into the `build` folder:
 
 ```bash
 npm run build
 ```
 
-## Структура стилей
+## Styles structure
 
 ```
 src/
-  App.js              — вёрстка страницы
-  App.scss            — стили блоков страницы
+  App.js              — page markup
+  App.scss            — page block styles
   styles/
-    _variables.scss   — цвета, шрифты, брейкпоинты
-    _mixins.scss      — миксины медиазапросов и хелперы
-    _reset.scss       — сброс стилей
+    _variables.scss   — colors, fonts, breakpoints
+    _mixins.scss      — media query mixins and helpers
+    _reset.scss       — style reset
   assets/
-    images/           — растровые изображения
-    icons/            — SVG-иконки
+    images/           — raster images
+    icons/            — SVG icons
 ```

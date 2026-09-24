@@ -1,0 +1,30 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.journey {
+  padding-bottom: 60px;
+}
+
+.journey__title {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.journey__text {
+  opacity: 0.6;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.journey__link {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  color: $color-accent;
+  transition: color $transition;
+
+  &:hover {
+    color: $color-accent-muted;
+  }
+}

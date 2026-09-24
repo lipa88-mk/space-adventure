@@ -52,10 +52,6 @@ img {
   }
 }
 
-.button {
-  display: block;
-}
-
 // HEADER
 .header {
   background: $color-bg;
@@ -85,16 +81,7 @@ img {
   min-height: $hero-height;
   background-color: $color-navy;
 
-  // fallback:
-  background-image: $overlay, url('./assets/images/bg-main.webp');
-
-  // for retina:
-  background-image:
-    $overlay,
-    image-set(
-      url('./assets/images/bg-main.webp') 1x,
-      url('./assets/images/bg-main@2x.webp') 2x
-    );
+  @include bg-overlay-retina('bg-main');
 
   background-size: cover;
   background-position: center;
@@ -130,3 +117,183 @@ img {
   margin-bottom: 22px;
 }
 // /Hero
+
+// BUTTON
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 238px;
+  min-height: 66px;
+  padding: 12px 32px;
+  font: inherit;
+  font-size: 24px;
+  color: $color-accent;
+  background: transparent;
+  border: 2px solid $color-accent;
+  border-radius: 34px;
+  cursor: pointer;
+  transition:
+    color $transition,
+    background-color $transition;
+
+  &:hover {
+    color: $color-bg;
+    background-color: $color-accent;
+  }
+
+  @include mobile {
+    min-width: 180px;
+    min-height: 52px;
+    font-size: 18px;
+  }
+}
+// /Button
+
+// OFFERS
+.offers {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.offers__title {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.offers__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(350px, max-content));
+  align-items: start;
+  gap: 40px;
+
+  @include tablet {
+    gap: 30px;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.offers__item--wide {
+  grid-column: span 2;
+
+  @include tablet {
+    grid-column: span 1;
+  }
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 50px 36px 36px 36px;
+  border-radius: 8px;
+
+  background-color: $color-navy;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include mobile {
+    padding: 32px 20px;
+  }
+}
+
+.offer-card--wide {
+  padding: 36px;
+}
+
+@each $i in 1, 2, 3, 4 {
+  .offer-card--#{$i} {
+    @include bg-overlay-retina('bg-card-#{$i}');
+  }
+}
+
+.offer-card__title {
+  font-size: 46px;
+  line-height: 1;
+  margin-bottom: 22px;
+  width: 60%;
+
+  @include mobile {
+    font-size: 40px;
+  }
+}
+
+.offer-card--wide .offer-card__title {
+  font-size: 74px;
+
+  @include tablet {
+    font-size: 40px;
+  }
+}
+
+.offer-card__text {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.offer-card--wide .offer-card__text {
+  font-size: 26px;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+// Accordion
+.offer-card__button-text--less {
+  display: none;
+}
+
+.offer-card__toggle:checked + .offer-card__button {
+  .offer-card__button-text--more {
+    display: none;
+  }
+  .offer-card__button-text--less {
+    display: inline;
+  }
+}
+
+.offer-card__toggle:focus-visible + .offer-card__button {
+  outline: 2px solid $color-fg;
+  outline-offset: 4px;
+}
+
+.offer-card__details {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows $transition,
+    opacity $transition,
+    visibility $transition;
+}
+
+.offer-card__details-text {
+  overflow: hidden;
+  max-width: 600px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.offer-card__toggle:checked ~ .offer-card__details {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+}
+
+.offer-card__toggle:checked ~ .offer-card__details .offer-card__details-text {
+  padding-top: 22px;
+}
+// /Offers

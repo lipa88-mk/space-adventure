@@ -9,12 +9,77 @@
   font-size: 32px;
   font-weight: 900;
   margin-bottom: 18px;
+
+  @include tablet {
+    font-size: 24px;
+    margin-bottom: 13px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 }
 
 .journey__text {
   opacity: 0.6;
   font-size: 20px;
   margin-bottom: 18px;
+
+  @include tablet {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+.journey__more {
+  display: grid;
+  grid-template-rows: 0fr; // 0fr -> 1fr animates to the content height
+  visibility: hidden; // hides collapsed text from screen readers
+  transition:
+    grid-template-rows 0.5s ease,
+    visibility 0.5s;
+}
+
+.journey__more-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.journey__toggle:checked ~ .journey__more {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.journey__link-less,
+.journey__toggle:checked ~ .journey__link .journey__link-more {
+  display: none;
+}
+
+.journey__toggle:checked ~ .journey__link .journey__link-less {
+  display: inline;
+}
+
+// Keeps "Hide" pinned to the bottom of the viewport while the section is in view
+.journey__toggle:checked ~ .journey__link {
+  position: sticky;
+  bottom: 0;
+  padding-block: 12px;
+  background-color: $color-navy;
+}
+.journey__toggle:focus-visible ~ .journey__link {
+  outline: 2px solid $color-accent;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey__more {
+    transition: none;
+  }
 }
 
 .journey__link {
@@ -22,9 +87,19 @@
   width: 100%;
   cursor: pointer;
   color: $color-accent;
+  font-size: 20px;
+  font-weight: 900;
   transition: color $transition;
 
   &:hover {
     color: $color-accent-muted;
+  }
+
+  @include tablet {
+    font-size: 16px;
+  }
+
+  @include mobile {
+    font-size: 14px;
   }
 }

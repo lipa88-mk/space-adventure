@@ -1,9 +1,132 @@
 @use 'styles/reset';
+@use 'styles/fonts';
 @use 'styles/variables' as *;
 @use 'styles/mixins' as *;
 
 body {
   font-family: $font-main;
-  color: $color-text;
-  background-color: $color-bg;
+  font-weight: $font-weight-base;
+  color: $color-fg;
+  background-color: $color-navy;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.brand {
+  color: $color-brand;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-desktop;
+  margin: 0 auto;
+  padding-left: $padding-desktop;
+  padding-right: $padding-desktop;
+
+  @include tablet {
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+  @include mobile {
+    padding-left: $padding-mobile;
+    padding-right: $padding-mobile;
+  }
+}
+
+.button {
+  display: block;
+}
+
+// HEADER
+.header {
+  background: $color-bg;
+  padding: 24px 0 20px 0;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  font-size: 18px;
+}
+
+// /Header
+
+// HERO
+.hero {
+  $hero-height: 490px;
+
+  min-height: $hero-height;
+  background-color: $color-navy;
+
+  // fallback:
+  background-image: $overlay, url('./assets/images/bg-main.webp');
+
+  // for retina:
+  background-image:
+    $overlay,
+    image-set(
+      url('./assets/images/bg-main.webp') 1x,
+      url('./assets/images/bg-main@2x.webp') 2x
+    );
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+}
+
+.hero__wrap {
+  padding-top: 90px;
+  padding-bottom: 80px;
+  background-image: url('./assets/images/earth.webp');
+
+  // for retina:
+  background-image: image-set(
+    url('./assets/images/earth.webp') 1x,
+    url('./assets/images/earth@2x.webp') 2x
+  );
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.hero__title {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+.hero__description {
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+// /Hero

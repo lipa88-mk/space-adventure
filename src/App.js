@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import './App.scss';
-import { ReactComponent as LogoIcon} from './assets/icons/logo_GO.svg';
+import { ReactComponent as LogoIcon } from './assets/icons/logo_GO.svg';
+import { ReactComponent as MenuBurgerIcon } from './assets/icons/burger.svg';
+import { ReactComponent as MenuCrossIcon } from './assets/icons/cross.svg';
 import cartIconUrl from './assets/icons/cart.svg';
 
 const offers = [
@@ -28,6 +31,8 @@ const offers = [
 ];
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="page">
       <header className="header">
@@ -37,15 +42,28 @@ function App() {
             href="/"
             aria-label="GO — to the main page"
           >
-            <LogoIcon
-              className="logo__icon"
-              width={104}
-              height={34}
-            />
+            <LogoIcon className="logo__icon" width={104} height={34} />
           </a>
 
           <nav className="header__nav nav" aria-label="Main navigation">
-            <ul className="nav__list">
+            <button
+              type="button"
+              className="nav__button"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="main-menu"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
+              {isMenuOpen ? (
+                <MenuCrossIcon aria-hidden="true" />
+              ) : (
+                <MenuBurgerIcon aria-hidden="true" />
+              )}
+            </button>
+            <ul
+              id="main-menu"
+              className={`nav__list${isMenuOpen ? ' nav__list--open' : ''}`}
+            >
               <li className="nav__item">
                 <a className="nav__link" href="/" aria-current="page">
                   Home

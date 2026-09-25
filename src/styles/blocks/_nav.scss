@@ -6,6 +6,39 @@
   gap: 56px;
   align-items: center;
   font-size: 18px;
+
+  @include mobile {
+    display: none;
+  }
+}
+@include mobile {
+  .nav__list--open {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    background-color: $color-bg;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+
+    & .nav__item {
+      width: 100%;
+      border-top: 1px solid $color-accent;
+    }
+
+    & .nav__link {
+      width: 100%;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .nav__link {
@@ -30,5 +63,13 @@
 
   .nav__link:hover & {
     @include gradient-shift-active;
+  }
+}
+
+.nav__button {
+  display: none;
+
+  @include mobile {
+    display: inline-flex;
   }
 }

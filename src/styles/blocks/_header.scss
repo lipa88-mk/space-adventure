@@ -1,8 +1,21 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .header {
   background: $color-bg;
-  padding: 24px 0 20px 0;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  position: relative; // For mobile menu
+
+  @include tablet {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  @include mobile {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }
 
 .header__wrap {

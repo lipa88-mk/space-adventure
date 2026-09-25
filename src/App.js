@@ -32,9 +32,10 @@ const offers = [
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className="page">
+    <>
       <header className="header">
         <div className="container header__wrap">
           <a
@@ -65,12 +66,21 @@ function App() {
               className={`nav__list${isMenuOpen ? ' nav__list--open' : ''}`}
             >
               <li className="nav__item">
-                <a className="nav__link" href="/" aria-current="page">
+                <a
+                  className="nav__link"
+                  href="/"
+                  aria-current="page"
+                  onClick={closeMenu}
+                >
                   Home
                 </a>
               </li>
               <li className="nav__item">
-                <a className="nav__link" href="/products">
+                <a
+                  className="nav__link"
+                  href="/products"
+                  onClick={closeMenu}
+                >
                   Products
                 </a>
               </li>
@@ -79,9 +89,10 @@ function App() {
                   className="nav__link nav__link--icon"
                   href="/cart"
                   aria-label="Cart"
+                  onClick={closeMenu}
                 >
                   <span
-                    className="cart__icon"
+                    className="nav__icon"
                     style={{ '--icon': `url(${cartIconUrl})` }}
                     aria-hidden="true"
                   />
@@ -91,7 +102,7 @@ function App() {
           </nav>
         </div>
       </header>
-      <main className="page__main">
+      <main>
         <section className="hero">
           <div className="container hero__wrap">
             <h1 className="hero__title">
@@ -178,7 +189,7 @@ function App() {
           <p className="footer__text">Exciting space adventure!</p>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 

@@ -42,7 +42,7 @@
 
   @include tablet {
     font-size: 16px;
-    padding: $vertical-padding/2 $horizontal-padding;
+    padding: calc($vertical-padding / 2) $horizontal-padding;
 
     &--accent {
       padding: $vertical-padding $horizontal-padding;
@@ -51,7 +51,7 @@
 
   @include mobile {
     &--accent {
-      padding: $vertical-padding/2 $horizontal-padding;
+      padding: calc($vertical-padding / 2) $horizontal-padding;
     }
   }
 }

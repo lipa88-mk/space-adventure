@@ -58,7 +58,7 @@
   display: flex;
 }
 
-.cart__icon {
+.nav__icon {
   @include gradient-icon(24px, 20px);
 
   .nav__link:hover & {

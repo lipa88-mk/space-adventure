@@ -73,20 +73,43 @@ npm run build
 
 ```
 src/
-  App.js              — page markup
-  App.scss            — page block styles
+  App.js                — page markup, offers data, burger menu state
+  App.scss              — entry point: imports base styles and blocks
   styles/
-    _variables.scss   — colors, fonts, breakpoints
-    _mixins.scss      — media query mixins and helpers
-    _reset.scss       — style reset
+    _variables.scss     — colors, fonts, breakpoints, transitions
+    _mixins.scss        — media query, gradient and retina background mixins
+    _reset.scss         — style reset
+    _fonts.scss         — @font-face declarations (Lato 700 / 900)
+    _base.scss          — base page styles
+    _utilities.scss     — helper classes (.visually-hidden, .brand, .accent)
+    blocks/             — one BEM block per file
+      _container.scss
+      _header.scss
+      _logo.scss
+      _nav.scss         — navigation and mobile menu
+      _hero.scss
+      _button.scss
+      _offers.scss
+      _offer-card.scss
+      _journey.scss     — "Read more" without JavaScript
+      _footer.scss
   assets/
-    images/           — raster images
-    icons/            — SVG icons
+    fonts/              — Lato (woff2)
+    images/             — optimized raster images (with @2x versions for retina)
+    icons/              — SVG icons and logo
 ```
+
+## Implementation details
+
+- **Burger menu** — the open state is stored in `useState`; the menu closes on a burger button click and after choosing a menu item.
+- **"Read more"** — pure CSS: a visually hidden `checkbox` + `label`, the text expands with a `grid-template-rows: 0fr → 1fr` transition.
+- **Backgrounds** — multiple backgrounds (gradient overlay + image) for the hero section and offer cards.
+- **Retina** — backgrounds are loaded via `image-set()` with `1x` / `2x` sources.
 
 ## Graphics optimization
 
-- Raster images were optimized with [Squoosh](https://squoosh.app/).
+- Raster images were optimized with [Squoosh](https://squoosh.app/) (backgrounds converted to WebP); only the optimized files are kept in the repository.
+- Each image has a `@2x` version for high-density screens.
 - Vector (SVG) images were optimized with [SVGOMG](https://svgomg.net/).
 
 ## Notes

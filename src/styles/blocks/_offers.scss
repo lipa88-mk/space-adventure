@@ -14,8 +14,6 @@
 .offers__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(auto-fill, minmax(350px, max-content));
-  align-items: start;
   gap: 40px;
 
   @include tablet {

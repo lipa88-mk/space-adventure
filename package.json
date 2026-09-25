@@ -2,6 +2,7 @@
   "name": "space-adventure",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lipa88-mk.github.io/space-adventure",
   "dependencies": {
     "react": "^19.3.0",
     "react-dom": "^19.3.0",

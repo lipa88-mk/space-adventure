@@ -40,7 +40,7 @@ function App() {
         <div className="container header__wrap">
           <a
             className="header__logo logo"
-            href="/"
+            href={`${process.env.PUBLIC_URL}/`}
             aria-label="GO — to the main page"
           >
             <LogoIcon className="logo__icon" width={104} height={34} />
@@ -68,7 +68,7 @@ function App() {
               <li className="nav__item">
                 <a
                   className="nav__link"
-                  href="/"
+                  href={`${process.env.PUBLIC_URL}/`}
                   aria-current="page"
                   onClick={closeMenu}
                 >
@@ -78,7 +78,7 @@ function App() {
               <li className="nav__item">
                 <a
                   className="nav__link"
-                  href="/products"
+                  href="#/"
                   onClick={closeMenu}
                 >
                   Products
@@ -87,7 +87,7 @@ function App() {
               <li className="nav__item">
                 <a
                   className="nav__link nav__link--icon"
-                  href="/cart"
+                  href="#/"
                   aria-label="Cart"
                   onClick={closeMenu}
                 >

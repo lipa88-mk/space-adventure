@@ -3,6 +3,7 @@
 Responsive layout of a single-page SPA for a fictional app, built from a Figma design.
 
 - Repository: https://github.com/lipa88-mk/space-adventure
+- Demo: https://lipa88-mk.github.io/space-adventure/
 
 ## Task
 
@@ -68,6 +69,12 @@ Production build into the `build` folder:
 ```bash
 npm run build
 ```
+
+## Deployment
+
+The site is deployed to GitHub Pages by the [GitHub Actions workflow](.github/workflows/deploy.yml) on every push to `main` (it can also be started manually from the Actions tab). The workflow uses the Node version from `.nvmrc`, runs `npm ci` and `npm run build`, and publishes the `build` folder.
+
+The `homepage` field in `package.json` sets the base path (`/space-adventure/`) for the built assets.
 
 ## Styles structure
 

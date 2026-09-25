@@ -1,6 +1,34 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
 .nav__list {
   display: flex;
   gap: 56px;
   align-items: center;
   font-size: 18px;
+}
+
+.nav__link {
+  @include gradient-shift;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  &:hover {
+    @include gradient-shift-active;
+  }
+}
+
+.nav__link--icon {
+  display: flex;
+}
+
+.cart__icon {
+  @include gradient-icon(24px, 20px);
+
+  .nav__link:hover & {
+    @include gradient-shift-active;
+  }
 }

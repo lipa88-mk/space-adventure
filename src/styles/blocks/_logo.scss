@@ -1,0 +1,11 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.logo__icon {
+    width: 104px;
+    color: $color-brand;
+
+    @include tablet {
+        width: 72px;
+    }
+}

@@ -12,6 +12,40 @@
   }
 }
 
+// Wide gradient: white third on the left, yellow → pink on the right.
+// Shift it with `gradient-shift-active` on hover.
+@mixin gradient-shift {
+  background: linear-gradient(
+    118deg,
+    $color-fg 0%,
+    $color-fg 33%,
+    $color-accent 66%,
+    $color-brand 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+
+  transition: background-position $transition;
+}
+
+@mixin gradient-shift-active {
+  background-position: 100% 50%;
+}
+
+// Icon filled with the gradient, cut out by an SVG mask.
+// Pass the icon url through the `--icon` custom property from JSX.
+@mixin gradient-icon($width, $height, $mask: var(--icon)) {
+  @include gradient-shift;
+
+  display: inline-block;
+  flex-shrink: 0;
+  width: $width;
+  height: $height;
+
+  -webkit-mask: $mask center / contain no-repeat;
+  mask: $mask center / contain no-repeat;
+}
+
 @mixin bg-overlay-retina($name, $path: '../assets/images/') {
   background-image: $overlay, url('#{$path}#{$name}.webp');
   background-image:

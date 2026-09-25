@@ -1,6 +1,6 @@
 import './App.scss';
-import logoIcon from './assets/icons/logo_GO.svg';
-import cartIcon from './assets/icons/cart.svg';
+import { ReactComponent as LogoIcon} from './assets/icons/logo_GO.svg';
+import cartIconUrl from './assets/icons/cart.svg';
 
 const offers = [
   {
@@ -37,12 +37,10 @@ function App() {
             href="/"
             aria-label="GO — to the main page"
           >
-            <img
+            <LogoIcon
               className="logo__icon"
-              src={logoIcon}
-              alt=""
               width={104}
-              height={35}
+              height={34}
             />
           </a>
 
@@ -64,12 +62,10 @@ function App() {
                   href="/cart"
                   aria-label="Cart"
                 >
-                  <img
+                  <span
                     className="cart__icon"
-                    src={cartIcon}
-                    alt=""
-                    width={24}
-                    height={20}
+                    style={{ '--icon': `url(${cartIconUrl})` }}
+                    aria-hidden="true"
                   />
                 </a>
               </li>
@@ -158,6 +154,7 @@ function App() {
           </label>
         </section>
       </main>
+
       <footer className="footer">
         <div className="container">
           <p className="footer__text">Exciting space adventure!</p>

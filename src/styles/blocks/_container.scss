@@ -3,17 +3,17 @@
 
 .container {
   width: 100%;
-  max-width: $container-desktop;
+  max-width: $bp-desktop;
   margin: 0 auto;
-  padding-left: $padding-desktop;
-  padding-right: $padding-desktop;
+  padding-left: 80px;
+  padding-right: 80px;
 
   @include tablet {
-    padding-left: $padding-tablet;
-    padding-right: $padding-tablet;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   @include mobile {
-    padding-left: $padding-mobile;
-    padding-right: $padding-mobile;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

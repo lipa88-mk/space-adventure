@@ -84,6 +84,11 @@ src/
     icons/            — SVG icons
 ```
 
+## Graphics optimization
+
+- Raster images were optimized with [Squoosh](https://squoosh.app/).
+- Vector (SVG) images were optimized with [SVGOMG](https://svgomg.net/).
+
 ## Notes
 
 ### Alternative "Read more" implementation: `details` + `summary`

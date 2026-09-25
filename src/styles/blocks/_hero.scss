@@ -2,25 +2,28 @@
 @use '../mixins' as *;
 
 .hero {
-  $hero-height: 490px;
-
-  min-height: $hero-height;
+  min-height: 490px;
   background-color: $color-navy;
 
   @include bg-overlay-retina('bg-main');
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
+
+  @include tablet {
+    min-height: 420px;
+  }
+
+  @include mobile {
+    min-height: 450px;
+  }
 }
 
 .hero__wrap {
   padding-top: 90px;
   padding-bottom: 80px;
   background-image: url('../../assets/images/earth.webp');
-
   // for retina:
   background-image: image-set(
     url('../../assets/images/earth.webp') 1x,
@@ -28,6 +31,23 @@
   );
   background-position: right center;
   background-repeat: no-repeat;
+
+  @include tablet {
+    background-position: right -125px center;
+  }
+
+  @include mobile {
+    padding-top: 44px;
+    padding-bottom: 44px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    background-position: center top -150px;
+    background-size: contain;
+  }
 }
 
 .hero__title {
@@ -35,10 +55,26 @@
   font-weight: 900;
   line-height: 1;
   margin-bottom: 22px;
+
+  @include tablet {
+    font-size: 48px;
+  }
+  @include mobile {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
 }
 
 .hero__description {
   font-size: 32px;
   line-height: 1.2;
   margin-bottom: 22px;
+
+  @include tablet {
+    font-size: 22px;
+  }
+  @include mobile {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 }

@@ -55,9 +55,9 @@ function App() {
               onClick={() => setIsMenuOpen((prev) => !prev)}
             >
               {isMenuOpen ? (
-                <MenuCrossIcon aria-hidden="true" />
+                <MenuCrossIcon width={30} height={30} aria-hidden="true" />
               ) : (
-                <MenuBurgerIcon aria-hidden="true" />
+                <MenuBurgerIcon width={30} height={30} aria-hidden="true" />
               )}
             </button>
             <ul

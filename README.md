@@ -5,6 +5,16 @@ Responsive layout of a single-page SPA for a fictional app, built from a Figma d
 - Repository: https://github.com/lipa88-mk/space-adventure
 - Demo: https://lipa88-mk.github.io/space-adventure/
 
+**Lighthouse score**: 
+
+<img width="473" height="164" alt="Lighthouse score for Desktop" src="https://github.com/user-attachments/assets/7087121b-0aa1-43b5-8594-26b12cf3a16c" />
+<img width="472" height="158" alt="Lighthouse score for Mobile" src="https://github.com/user-attachments/assets/b9217b7a-8f4a-4e21-afe1-02261003f350" />
+
+**Axe DevTools test**: 
+
+<img width="541" height="272" alt="image" src="https://github.com/user-attachments/assets/824c5074-e32e-4890-ad1b-407b1f54d507" />
+
+
 ## Task
 
 Build the page from the Figma design (the design contains all the required elements: images, backgrounds, logos, button shapes, colors and fonts) and implement:
@@ -22,6 +32,15 @@ Build the page from the Figma design (the design contains all the required eleme
 4. Flex / grid are used for layouts.
 5. Multiple Backgrounds are recommended for the background.
 6. Images are optimized; SVG is used where possible.
+
+## To improve
+
+- Largest Contentful Paint: Optimizing CSS background images by adding lower-resolution images for tablet and mobile versions.
+- Align with design team:
+  - focus states for all intractive elements;
+  - hover state for burger menu icon
+- UI bug on "Read more" button focus state (extra vertical padding);
+- tbd
 
 ### Recommendations
 
